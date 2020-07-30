@@ -1,8 +1,8 @@
-### Olympics Dataset - Machine Learning - Linear Regression for medal count
+### Olympics Dataset - Machine Learning - Linear Regression for medal count (USA)
 
 Currently working:
 - Total Medal Count - predicting for 1988 - > increaing accuracy score
-- Hyperparameter Tuning - Ordinary Least Square for Linear Regression
+- Hyperparameter Tuning - Gradient Descent for Linear Regression
 - data: Summer_Olympics_Host.csv
  
 
