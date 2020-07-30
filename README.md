@@ -3,11 +3,10 @@
 Currently working:
 - Total Medal Count - predicting for 1988
 - Hyperparameter Tuning - GridSearchCV for Linear Regression
-- data: Summer_Olympics.csv
+- data: Summer_Olympics_Host.csv
  
 
 
 Pending:
 - Total Medal Count - predicting for 1988-2020
 - Gold, Silver, Bronze Medal Count
-- data: Summer_Olympics_Host.csv
