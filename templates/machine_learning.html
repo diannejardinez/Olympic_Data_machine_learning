@@ -115,7 +115,7 @@ css from https://mdbootstrap.com/docs/jquery/javascript/scroll/*/
   </section>
 
   <div class="container">
-      <h2 class="text-danger ml-5 mt-5 text-center" id="predicted_medals" >Predicted Total Medals</h2>
+      <h2 class="text-danger ml-5 mt-5 text-center" >Predicted Total Medals (USA)</h2>
   </div>
           <!-- Table - Actual count -->
          <div class="container"> 
@@ -129,8 +129,8 @@ css from https://mdbootstrap.com/docs/jquery/javascript/scroll/*/
                   <thead>
                     <tr>
                       <th>Year</th>
-                      <th>Country</th>
-                      <th>Host</th>
+<!--                       <th>Country</th>
+                      <th>Host</th> -->
                       <th>Athletes</th>
                       <th>Sports</th>
                       <th>Events</th>
@@ -143,8 +143,8 @@ css from https://mdbootstrap.com/docs/jquery/javascript/scroll/*/
                   <tbody>
                     <tr>
                     <td>2004</td>
-                    <td>USA</td>
-                    <td>0</td>
+<!--                     <td>USA</td>
+                    <td>0</td> -->
                     <td>533</td>
                     <td>31</td>
                     <td>254</td>
@@ -155,8 +155,8 @@ css from https://mdbootstrap.com/docs/jquery/javascript/scroll/*/
                     </tr>
                     <tr>
                     <td>2008</td>
-                    <td>USA</td>
-                    <td>0</td>
+<!--                     <td>USA</td>
+                    <td>0</td> -->
                     <td>588</td>
                     <td>32</td>
                     <td>258</td>
@@ -167,8 +167,8 @@ css from https://mdbootstrap.com/docs/jquery/javascript/scroll/*/
                     </tr>
                     <tr>
                     <td>2012</td>
-                    <td>USA</td>
-                    <td>0</td>
+<!--                     <td>USA</td>
+                    <td>0</td> -->
                     <td>529</td>
                     <td>31</td>
                     <td>245</td>
@@ -179,8 +179,8 @@ css from https://mdbootstrap.com/docs/jquery/javascript/scroll/*/
                     </tr>
                     <tr>
                     <td>2016</td>
-                    <td>USA</td>
-                    <td>0</td>
+<!--                     <td>USA</td>
+                    <td>0</td> -->
                     <td>555</td>
                     <td>33</td>
                     <td>245</td>
@@ -191,8 +191,8 @@ css from https://mdbootstrap.com/docs/jquery/javascript/scroll/*/
                     </tr>
                     <tr>
                     <td>2020</td>
-                    <td>USA</td>
-                    <td>0</td>
+<!--                     <td>USA</td>
+                    <td>0</td> -->
                     <td>340</td>
                     <td>191</td>
                     <td>245</td>
@@ -213,6 +213,22 @@ css from https://mdbootstrap.com/docs/jquery/javascript/scroll/*/
      <div class="container"> 
       <div class="card shadow mb-4">
         <div class="card-header py-3">
+          <h5 class="m-0 font-weight-bold text-info text-center" id="predicted_medals">Linear Regression & ARIMA Model: Predicted count</h5>
+        </div>
+        <div class="card-body">
+
+<div class='tableauPlaceholder pl-5' id='viz1596626245970' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ol&#47;OlympicDashboard_15966213547080&#47;MedalDashboard&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='OlympicDashboard_15966213547080&#47;MedalDashboard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ol&#47;OlympicDashboard_15966213547080&#47;MedalDashboard&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1596626245970');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='816px';vizElement.style.maxWidth='916px';vizElement.style.width='100%';vizElement.style.height='627px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='816px';vizElement.style.maxWidth='916px';vizElement.style.width='100%';vizElement.style.height='627px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+
+        </div>
+      </div>
+      <p class="text-muted ml-2 mb-5">Source: <a href="https://en.wikipedia.org/wiki/United_States_at_the_2020_Summer_Olympics">Tokyo  Olympics Athletes, Sports, and Events count as of August 2020. Note: Qualification period extended to June 2021.</a></p>
+    </div>
+
+<!-- Table - Predicted count -Linear Regression-->
+<!--      <div class="container"> 
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
           <h5 class="m-0 font-weight-bold text-info text-center">Linear Regression: Predicted count</h5>
         </div>
         <div class="card-body">
@@ -225,9 +241,9 @@ css from https://mdbootstrap.com/docs/jquery/javascript/scroll/*/
                   <th>Gold</th>
                   <th>Silver</th>
                   <th>Bronze</th>
-                  <th>Total Medals</th>
+                  <th>Total Medals</th> -->
 <!--                   <th>Test Score</th> -->
-                  <th>Test Score</th>
+<!--                   <th>Test Score</th>
                 </tr>
               </thead>
               <tbody>
@@ -280,10 +296,10 @@ css from https://mdbootstrap.com/docs/jquery/javascript/scroll/*/
           </div>
         </div>
       </div>
-  </div>
+  </div> -->
 
 <!-- Table - Predicted count -ARIMA Model-->
-     <div class="container"> 
+<!--      <div class="container"> 
       <div class="card shadow mb-4">
         <div class="card-header py-3">
           <h5 class="m-0 font-weight-bold text-info text-center">ARIMA Model: Predicted count</h5>
@@ -318,27 +334,27 @@ css from https://mdbootstrap.com/docs/jquery/javascript/scroll/*/
                 <td class="text-warning">41</td>
                 <td class="text-warning">32</td>
                 <td class="text-warning">29</td>
-                <td class="text-warning">100</td>
+                <td class="text-warning">100</td> -->
                 <!-- <td>Gold: %, Silver:%, <br>Bronze: %, Total Medals: %</td> -->
-                </tr>
+<!--                 </tr>
                 <tr>
                 <td>2012</td>
                 <td>USA</td>
                 <td class="text-warning">36</td>
                 <td class="text-warning">30</td>
                 <td class="text-warning">32</td>
-                <td class="text-warning">110</td>
+                <td class="text-warning">110</td> -->
                 <!-- <td>Gold: %, Silver:%, <br>Bronze: %, Total Medals: %</td> -->
-                </tr>
+<!--                 </tr>
                 <tr>
                 <td>2016</td>
                 <td>USA</td>
                 <td class="text-warning">38</td>
                 <td class="text-warning">37</td>
                 <td class="text-warning">35</td>
-                <td class="text-warning">110</td>
+                <td class="text-warning">110</td> -->
                 <!-- <td>Gold: %, Silver:%, <br>Bronze: %, Total Medals: %</td> -->
-                </tr>
+<!--                 </tr>
                 <tr>
                 <td>2020</td>
                 <td>USA</td>
@@ -355,58 +371,32 @@ css from https://mdbootstrap.com/docs/jquery/javascript/scroll/*/
       </div>
        <p class="text-muted ml-2">Source: <a href="https://en.wikipedia.org/wiki/United_States_at_the_2020_Summer_Olympics">Tokyo  Olympics Athletes, Sports, and Events count as of August 2020. Note: Qualification period extended to June 2021.</a></p>
   </div>
-
+ -->
 
 
 
 <hr>
 
   <div class="container" id="gymnastic_body_comp">
-      <h2 class="text-danger ml-5 mt-5 mb-3 text-center">Predicted Age, Height, Weight<br>for Gymnastic Gold Medalists</h2>
+      <h2 class="text-danger ml-5 mt-5 mb-3 text-center">Predicted Age & Body Composition</h2>
   </div>
 
 
           <!-- Table - Actual count -->
-<!--          <div class="container"> 
+         <div class="container"> 
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h5 class="m-0 font-weight-bold text-primary">Actual Age and Body Composition</h5>
+              <h5 class="m-0 font-weight-bold text-info text-center">Logistic Regression: Predicted Age and Body Composition</h5>
             </div>
             <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Year</th>
-                      <th>Country</th>
-                      <th>Age</th>
-                      <th>Height</th>
-                      <th>Weight</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                    <td>2016</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td> 
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-      </div>
- -->
 
 
-
-
+    <div class="container">
+      <div class="row">
             <div class="col-md-2 mt-5" >
               <aside class="filters">
                 <div class="panel panel-default">
-                  <div class="panel-heading mb-3"><h5>Filter Search</h5></div>
+                  <div class="panel-heading mb-3 text-center"><h5>Filter Search</h5></div>
                   <div class="panel-body">
                     <form id = 'form'>
                       <div class="form-group">
@@ -421,32 +411,42 @@ css from https://mdbootstrap.com/docs/jquery/javascript/scroll/*/
                 </div>
               </aside>
             </div>
+        <div class="col-md-10 mt-5">
+          <div id="table-area" class="table-responsive table-wrapper-scroll-y my-custom-scrollbar scrollbar-primary">
+            <table id="ufo-table" class="table table-bordered table-striped table-hover table-condensed">
+              <thead id="thtable">
+                <tr>
+                  <th class="table-head"><h6>Age</h6></th>
+                  <th class="table-head"><h6>Height</h6></th>
+                  <th class="table-head"><h6>Weight</h6></th>
+                  <th class="table-head"><h6>Total Medals</h6></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-md-1 mb-5"> </div>
+
+      </div>
+    </div>
 
 
-
-
-          <!-- Table - Actual count -->
-         <div class="container"> 
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-               <h5 class="m-0 font-weight-bold text-info text-center">Logistic Regression: Predicted Age and Body Composition</h5>
-            </div>
-            <div class="card-body">
-              <div id="table-area" class="table-responsive table-wrapper-scroll-y my-custom-scrollbar scrollbar-primary">
-                <table class="table table-bordered table-striped table-hover table-condensed" id="#" width="100%" cellspacing="0">
-                  <thead id="thtable">
-                    <tr>
-                    <th class="table-head"><h6>Age</h6></th>
-                    <th class="table-head"><h6>Height</h6></th>
-                    <th class="table-head"><h6>Weight</h6></th>
-                    <th class="table-head"><h6>Total Medals</h6></th>
-                  </thead>
-                  <tbody></tbody>
+                  </tbody>
                 </table>
               </div>
             </div>
           </div>
       </div>
+
+
+
+
+
+
+
+
 
 
 
