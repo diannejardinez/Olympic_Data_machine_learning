@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Olympics - Visualization & Prediction</title>
+  <!-- Icon for window -->
+  <link rel="icon" href="https://image.flaticon.com/icons/svg/1021/1021169.svg">
+  <!-- Font awesome icons -->
+    <script src="https://kit.fontawesome.com/2e362d4438.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap 4 Link -->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-smnSwzHqW1zKbeuSMsAM/fMQpkk7HY11LuHiwT8snL/W2QBoZtVCT4H5x1CEcJCs" crossorigin="anonymous">
+  <!-- Link to D3 -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+<!-- Link to Plotly -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+<body>
+
+
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand mt-3" href="index.html"><h2 class="text-dark ml-2">OLYMPICS</h2></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto"></ul>
+      <ul class="nav navbar-nav navbar-right-custom">
+      <li class="nav-item">
+        <a class="nav-link" href="data.html">DATA</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Visualizations</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="chart0.html">Medals Timeline</a>
+          <a class="dropdown-item" href="chart1.html">Gender & Body Composition</a>
+          <a class="dropdown-item" href="chart2.html">Medals VS GDP</a>
+          <a class="dropdown-item" href="chart3.html">Medals World View - Seasons</a>
+          <a class="dropdown-item" href="chart4.html">Medals World View - Sport</a>
+        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="analysis.html">Analysis</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="olympic_facts.html">Olympic Facts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="machine_learning.html">Olympic Medal Predictions</a>
+      </li>
+      </ul>
+  </div>
+</nav>
+
+
+ <!-- Image header -->
+    <div class= "container">
+      <div class="row">
+          <div class="col-md-12">  
+            <img class="col-md-12" id="photo" src="../static/assets/images/images_home/line_chart.jpeg"/>   
+          </div>
+      </div>
+    </div>  
+
+<hr>
+<!--Insert title and subtitle here --> 
+<!--------------------------><!-------------------------->
+<div class= "container">
+  
+  <section id="header" class="text-center">
+      <h1 class="mb-5 display-3 content">Medals VS GDP</h1>
+      <h2 class="mb-5 content">Does money buy medals?</h2>
+  </section>
+</div>
+
+
+
+
+<!-- Input code here for visualizations -->
+<!--------------------------><!-------------------------->
+<!--------------------------><!-------------------------->
+    <div class= "container d-flex justify-content-center ">
+      <div class="row">
+          <div class="col-md-12">
+              <h2>Sport Participation and Popularity</h2>
+              <p></p>
+                <div id="plot"></div>
+          </div>
+      </div>
+    </div>
+
+    <div class= "container d-flex justify-content-center">
+      <div class="row card shadow">
+          <div class="col-md-12">
+            <h2 class ="mt-3 ml-3">Analysis: Relationship between GDP and Olympic Medals</h2>
+            <p class="mb-3 ml-3">There is a significant relationship between a nation’s GDP and the number of gold medals they win at the Olympics.
+            <br>
+            The top 10 countries with the most medals all have GDPs of more than 1 billion dollars, while the 10 countries with the fewest medals have GDPs well below 1 billion. The average GDP for gold medal winning countries is $1,062,860,000.
+            <br>
+            China has seen phenomenal economic growth over the last couple of decades, which has corresponded with China’s emergence as a global force in international sports.
+            </p>
+          </div>
+      </div>
+    </div>
+
+    <div class= "container">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="myDiv"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+<!-- Footer -->
+
+<div class="container-fluid ml-5">
+  <footer>
+    <p class="text-muted">Olympics Visualization and Prediction 2020.
+      Images: <a href="https://unsplash.com/">Unsplash &</a>  <a href="https://www.fool.com/amp/features/specials/2014/01/15/does-it-pay-to-host-the-olympics.aspx">Motley Fool, </a>
+     Avatars: <a href="https://getavataaars.com/">GetAvataaars</a></p>
+  </footer>
+  
+</div>
+
+
+
+
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="../static/js/chart2plot.js"> </script>
+
+</body>
+</html>

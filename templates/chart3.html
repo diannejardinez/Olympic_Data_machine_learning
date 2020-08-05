@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Olympics - Visualization & Prediction</title>
+  <!-- Icon for window -->
+  <link rel="icon" href="https://image.flaticon.com/icons/svg/1021/1021169.svg">
+  <!-- Font awesome icons -->
+    <script src="https://kit.fontawesome.com/2e362d4438.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap 4 Link -->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-smnSwzHqW1zKbeuSMsAM/fMQpkk7HY11LuHiwT8snL/W2QBoZtVCT4H5x1CEcJCs" crossorigin="anonymous">
+  <!-- Link to D3 -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+ <!-- Leaflet JS & CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
+  
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+
+<!-- Link to customized stylesheet -->
+  <link rel="stylesheet" href="../static/assets/css/style_chart3.css">
+
+ <style>
+  /* Fixed table header
+css from https://adrianroselli.com/2020/01/fixed-table-headers.html */
+th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #C0C0C0; 
+}
+ </style>
+
+</head>
+<body>
+
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand mt-3" href="index.html"><h2 class="text-dark ml-2">OLYMPICS</h2></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto"></ul>
+      <ul class="nav navbar-nav navbar-right-custom">
+      <li class="nav-item">
+        <a class="nav-link" href="data.html">DATA</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Visualizations</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="chart0.html">Medals Timeline</a>
+          <a class="dropdown-item" href="chart1.html">Gender & Body Composition</a>
+          <a class="dropdown-item" href="chart2.html">Medals VS GDP</a>
+          <a class="dropdown-item" href="chart3.html">Medals World View - Seasons</a>
+          <a class="dropdown-item" href="chart4.html">Medals World View - Sport</a>
+        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="analysis.html">Analysis</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="olympic_facts.html">Olympic Facts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="machine_learning.html">Olympic Medal Predictions</a>
+      </li>
+      </ul>
+  </div>
+</nav>
+
+
+ <!-- Image header -->
+    <div class= "container">
+      <div class="row">
+          <div class="col-md-12">  
+            <img class="col-md-12" id="photo" src="../static/assets/images/images_home/map_chart.jpeg"/>   
+          </div>
+      </div>
+    </div>  
+
+<hr>
+<!--Insert title and subtitle here --> 
+<!--------------------------><!-------------------------->
+<div class= "container">
+  
+  <section id="header" class="text-center">
+      <h1 class="mb-5 display-3 content">Medals World View</h1>
+      <h2 class="mb-5 content">by Seasons</h2>
+  </section>
+</div>
+
+
+<!-- Input code here for visualizations -->
+<!--------------------------><!-------------------------->
+<!--------------------------><!-------------------------->
+  <div class="container chart">
+    <div class = 'chart3'>
+        <!-- Your Chart will be appended here*/ -->
+    </div>
+  </div>
+    
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 mt-5">
+        <aside class="filters">
+          <div class="panel panel-default">
+            <div class="panel-heading mb-3"><h5>Filter Search</h5></div>
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Olympic Type</label>
+                        <input class="form-control" id="type" type="text" placeholder="summer">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="city">Enter Year</label>
+                        <input class="form-control" id="year" type="text" placeholder=2016>
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="state">Enter Medal</label>
+                        <input class="form-control" id="gold" type="text" placeholder="gold">
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+                  <button id="filter-btn" type="button" class="btn btn-info">Filter Table</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+
+<!--       <div class="col-md-1"> </div> -->
+
+        <!-- Table start -->
+      <div class="col-md-10 mt-5">
+        <div id="table-area" class ="table-responsive table-wrapper-scroll-y my-custom-scrollbar scrollbar-primary">
+          <table class="table table-bordered table-striped table-hover table-condensed">
+            <thead id="thtable">
+              <tr>
+                <th class="table-head"><h6>Type</h6></th>
+                <th class="table-head"><h6>Year</h6></th>
+                <th class="table-head"><h6>Region</h6></th>
+                <th class="table-head"><h6>Latitude</h6></th>
+                <th class="table-head"><h6>Longitude</h6></th>
+                <th class="table-head"><h6>Gold</h6></th>
+                <th class="table-head"><h6>Silver</h6></th>
+                <th class="table-head"><h6>Bronze</h6></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Table end -->
+      </div>
+    </div>
+
+<!-- Leaflet map -->
+    <div class="container my-5">
+<!--       <div class="row margin-top-50">
+        <div class="col-md-12"> -->
+          <div id="map" style="width: 1000px; height: 500px; left:10%;" ></div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- Footer -->
+
+<div class="container-fluid ml-5 mt-5">
+  <footer>
+    <p class="text-muted">Olympics Visualization and Prediction 2020.
+      Images: <a href="https://unsplash.com/">Unsplash &</a>  <a href="https://www.fool.com/amp/features/specials/2014/01/15/does-it-pay-to-host-the-olympics.aspx">Motley Fool, </a>
+     Avatars: <a href="https://getavataaars.com/">GetAvataaars</a></p>
+  </footer>
+</div>
+
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <!-- add link to your javascript file -->
+  <script type="text/javascript" src="../static/js/config.js"></script>
+  <script src="../static/js/data_chart3.js"></script>
+  <script type="text/javascript" src="../static/js/app_chart3.js"></script>
+
+</body>
+</html>
