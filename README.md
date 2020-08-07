@@ -1,4 +1,4 @@
-# Visualization Project: Olympics 1896 - 2016
+# Machine Learning Project: Olympics 1896 - 2020
 
 **Team** : Aastha Arora, Dianne Jardinez, Duong Luu, Ritika Bhansali, and Swarna Latha 
 
@@ -24,7 +24,7 @@
 [Olympics Website](https://diannejardinez.github.io/Olympic_Data_machine_learning/Flask%20API/templates/index.html)
 
 
-### Flask API for rendering database
+#### Flask API for rendering database
 
 - Prerequisites: 
 	- [pgAdmin and Postgres installed](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
