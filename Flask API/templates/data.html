@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Olympics - Visualization & Prediction</title>
+  <!-- Icon for window -->
+  <link rel="icon" href="https://image.flaticon.com/icons/svg/1021/1021169.svg">
+  <!-- Font awesome icons -->
+    <script src="https://kit.fontawesome.com/2e362d4438.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap 4 Link -->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-smnSwzHqW1zKbeuSMsAM/fMQpkk7HY11LuHiwT8snL/W2QBoZtVCT4H5x1CEcJCs" crossorigin="anonymous">
+  <!-- Link to D3 -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+<!-- Link to Plotly -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<!-- Link to customized stylesheet -->
+<!--   <link rel="stylesheet" href="../static/assets/css/style_data.css"> -->
+
+  <style>
+
+/* Fixed table header
+css from https://adrianroselli.com/2020/01/fixed-table-headers.html */
+th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #C0C0C0; 
+}
+
+/*custom scrollbar visbility in data html*/
+/*css from https://mdbootstrap.com/docs/jquery/tables/scroll/*/
+.my-custom-scrollbar {
+  position: relative;
+  height: 1000px;
+  overflow: auto;
+  width: 1200px;
+}
+.table-wrapper-scroll-y {
+  display: block;
+}
+
+/*Scrollbar edit in data html table
+css from https://mdbootstrap.com/docs/jquery/javascript/scroll/*/
+.scrollbar-primary::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #95989b; 
+}
+.scrollbar-primary::-webkit-scrollbar {
+  width: 12px;
+  background-color: #e3e4e6; 
+}
+
+  </style>
+
+</head>
+<body>
+
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand mt-3" href="index.html"><h2 class="text-dark ml-2">OLYMPICS</h2></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto"></ul>
+      <ul class="nav navbar-nav navbar-right-custom">
+      <li class="nav-item">
+        <a class="nav-link" href="data.html">DATA</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Visualizations</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="chart0.html">Medals Timeline</a>
+          <a class="dropdown-item" href="chart1.html">Gender & Body Composition</a>
+          <a class="dropdown-item" href="chart2.html">Medals VS GDP</a>
+          <a class="dropdown-item" href="chart3.html">Medals World View - Seasons</a>
+          <a class="dropdown-item" href="chart4.html">Medals World View - Sport</a>
+        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="analysis.html">Analysis</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="olympic_facts.html">Olympic Facts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="machine_learning.html">Olympic Medal Predictions</a>
+      </li>
+      </ul>
+  </div>
+</nav>
+
+
+ <!-- Image header -->
+    <div class= "container">
+      <div class="row">
+          <div class="col-md-12">  
+            <img class="col-md-12" id="photo" src="../static/assets/images/images_data/dive_into_data.png"/>   
+          </div>
+      </div>
+    </div>  
+
+<hr>
+<!--Insert title and subtitle here --> 
+<!--------------------------><!-------------------------->
+  <div class= "container">
+    <section id="header" class="text-center">
+        <h1 class="mb-5 display-3 content">Take a Deep dive into Data!</h1>
+<!--         <h2 class="mb-5 content">subtitle here</h2> -->
+    </section>
+  </div>
+
+
+<!-- Input code here for visualizations -->
+<!--------------------------><!-------------------------->
+<!--------------------------><!-------------------------->
+
+    <div class="container">
+      <div class="row">
+
+<!--         <div class="col-md-1"> </div> -->
+
+            <div class="col-md-2 mt-5" >
+              <aside class="filters">
+                <div class="panel panel-default">
+                  <div class="panel-heading mb-3"><h5>Filter Search</h5></div>
+                  <div class="panel-body">
+                    <form id = 'form'>
+                      <div class="form-group">
+                        <ul class="list-group" id="filters">
+                        </ul>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="panel-footer">
+                    <button class="btn btn-info" onclick="location.reload();">Clear Filters</button>
+                  </div>
+                </div>
+              </aside>
+            </div>
+
+<!--         <div class="col-md-1"> </div> -->
+
+        <div class="col-md-10 mt-5">
+          <div id="table-area" class="table-responsive table-wrapper-scroll-y my-custom-scrollbar scrollbar-primary">
+            <table id="ufo-table" class="table table-bordered table-striped table-hover table-condensed">
+              <thead id="thtable">
+                <tr>
+                <th class="table-head"><h6>Year</h6></th>
+                <th class="table-head"><h6>Season</h6></th>
+                <th class="table-head"><h6>Nation</h6></th>
+                <th class="table-head"><h6>Medals</h6></th>
+                <th class="table-head"><h6>Gold</h6></th>
+                <th class="table-head"><h6>Silver</h6></th>
+                <th class="table-head"><h6>Bronze</h6></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-md-1 mb-5"> </div>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+<!-- Footer -->
+
+<div class="container-fluid ml-5 mt-5">
+  <footer>
+    <p class="text-muted">Olympics Visualization and Prediction 2020.
+      Images: <a href="https://unsplash.com/">Unsplash &</a>  <a href="https://www.fool.com/amp/features/specials/2014/01/15/does-it-pay-to-host-the-olympics.aspx">Motley Fool, </a>
+     Avatars: <a href="https://getavataaars.com/">GetAvataaars</a></p>
+  </footer>
+</div>
+
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="../static/js/app_data_page.js"> </script>
+
+</body>
+</html>
