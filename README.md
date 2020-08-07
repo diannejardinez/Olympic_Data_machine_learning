@@ -18,8 +18,8 @@
 - Predicting Olympic Medalists in all Olympic Sports in 2020
 
 
-GitHub Pages for static
-[Olympics Website]()
+**GitHub Page for static information**
+[Olympics Website](https://diannejardinez.github.io/Olympic_Data_machine_learning/Flask%20API/templates/index.html)
 
 
 Flask API for rendering database:
