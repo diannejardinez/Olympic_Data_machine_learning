@@ -17,9 +17,26 @@
 - Predicting Gold, Silver, Bronze and Total Medals for USA for Tokyo 2020 Olympics
 - Predicting Olympic Medalists in all Olympic Sports in 2020
 
+---
 
 **GitHub Page for static information**
+
 [Olympics Website](https://diannejardinez.github.io/Olympic_Data_machine_learning/Flask%20API/templates/index.html)
 
 
-Flask API for rendering database:
+**Flask API for rendering database**
+
+# How to Run our Visualization Project
+
+- Prerequisites: 
+	- [pgAdmin and Postgres installed](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
+		- During Setup Wizard: select PostgreSQL Server, pgAdmin 4, Command Line Tools
+
+- Git clone this Repo 
+- Log into pdAdmin and create a database 
+- Go into Flask API
+- Use `PostgreSQL_schema.sql` inside the directory titled database for creating the schema for the newly created database 
+- Use `olympics_data.csv` inside the directory titled database to import in the pdAdmin 4 database
+- Update `config_database.py` with own pgAdmin 4 password and database name
+- Run in Terminal `$ python app.py`
+- Copy Server Flask app pathway provided by the Terminal into a Web browser 
