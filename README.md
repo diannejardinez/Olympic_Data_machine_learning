@@ -23,19 +23,4 @@
 
 [Olympics Project Website](https://diannejardinez.github.io/Olympic_Data_machine_learning/Flask%20API/templates/index.html)
 
----
-
-
-#### Flask API for rendering database
-
-- Prerequisites: 
-	- pgAdmin and Postgres installed
-
-- Git clone this Repo 
-- Log into pdAdmin and create a database 
-- Go into Flask API directory
-- Use `PostgreSQL_schema.sql` inside the directory titled database for creating the schema for the newly created database 
-- Use `olympics_data.csv` inside the directory titled database to import in the pdAdmin 4 database
-- Update `config_database.py` with own pgAdmin 4 password and database name
-- Run in Terminal `$ python app.py`
-- Copy Server Flask app pathway provided by the Terminal into a Web browser 
+**To Run through Flask**: Go to `readme_database_connection.md` in Flask API directory inside database directory
