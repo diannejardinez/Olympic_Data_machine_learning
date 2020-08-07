@@ -23,6 +23,8 @@
 
 [Olympics Project Website](https://diannejardinez.github.io/Olympic_Data_machine_learning/Flask%20API/templates/index.html)
 
+---
+
 
 #### Flask API for rendering database
 
