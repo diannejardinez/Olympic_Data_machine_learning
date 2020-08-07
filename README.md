@@ -27,8 +27,7 @@
 #### Flask API for rendering database
 
 - Prerequisites: 
-	- [pgAdmin and Postgres installed](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
-		- During Setup Wizard: select PostgreSQL Server, pgAdmin 4, Command Line Tools
+	- pgAdmin and Postgres installed
 
 - Git clone this Repo 
 - Log into pdAdmin and create a database 
