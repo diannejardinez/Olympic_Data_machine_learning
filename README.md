@@ -19,14 +19,12 @@
 
 ---
 
-**GitHub Page for static information**
+### GitHub Page for static information
 
 [Olympics Website](https://diannejardinez.github.io/Olympic_Data_machine_learning/Flask%20API/templates/index.html)
 
 
-**Flask API for rendering database**
-
-# How to Run our Visualization Project
+### Flask API for rendering database
 
 - Prerequisites: 
 	- [pgAdmin and Postgres installed](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
