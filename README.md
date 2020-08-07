@@ -17,9 +17,8 @@
 - Predicting Gold, Silver, Bronze and Total Medals for USA for Tokyo 2020 Olympics
 - Predicting Olympic Medalists in all Olympic Sports in 2020
 
----
 
-### GitHub Page for static information
+## GitHub Page for static information
 
 [Olympics Project Website](https://diannejardinez.github.io/Olympic_Data_machine_learning/Flask%20API/templates/index.html)
 
