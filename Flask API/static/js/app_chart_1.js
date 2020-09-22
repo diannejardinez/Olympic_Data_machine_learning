@@ -1,42 +1,18 @@
 
 
-// // Setting json files to a variable
-// var promises = [
-//   d3.json("/api/event/body-composition/F"),
-//   d3.json("/api/event/body-composition/M")]
+// Setting json files to a variable
+var promises = [
+  // d3.json("/api/event/body-composition/F"),
+  // d3.json("/api/event/body-composition/M")]
+  d3.json("../static/assets/data/female_bodycomp_age.json"),
+  d3.json("../static/assets/data/male_bodycomp_age.json")]
 
-// // Loading multiple datasets 
-// Promise.all(promises).then(function(allData){
-//   var femaleData = allData[0];
-//   var maleData = allData[1];
-//   // console.log(femaleData)
-//   // console.log(maleData)
-
-
-// // Loading static json files
-// d3.json("static/assets/data/male_bodycomp_age.json").then((maleData) => {
-//   console.log(maleData)
-// }); 
-
-// d3.json("static/assets/data/female_bodycomp_age.json").then((femaleData) => {
-//   console.log(femaleData)
-// }); 
-
-// var femaleData = [d3.json("static/assets/data/female_bodycomp_age.json")]
-// var maleData = [d3.json("static/assets/data/male_bodycomp_age.json")]
-// console.log(maleData)
-
-// d3.json("static/assets/data/female_bodycomp_age.json", function(femaleData) {
-//   console.log(maleData)
-// });
-
-// d3.json("static/assets/data/male_bodycomp_age.json", function(maleData) {
-//   console.log(maleData)
-// });
-d3.json("static/assets/data/female_bodycomp_age.json", then(function(femaleData) {
-  console.log(maleData)
-});
-
+// Loading multiple datasets 
+Promise.all(promises).then(function(allData){
+  var femaleData = allData[0];
+  var maleData = allData[1];
+  // console.log(femaleData)
+  // console.log(maleData)
 
 
 // Male ///////////////////////////
@@ -332,4 +308,4 @@ init3()
   }
 
 
-// });
+});
