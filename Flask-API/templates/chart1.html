@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Olympics - Visualization & Prediction</title>
+  <!-- Icon for window -->
+  <link rel="icon" href="https://image.flaticon.com/icons/svg/1021/1021169.svg">
+  <!-- Font awesome icons -->
+    <script src="https://kit.fontawesome.com/2e362d4438.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap 4 Link -->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-smnSwzHqW1zKbeuSMsAM/fMQpkk7HY11LuHiwT8snL/W2QBoZtVCT4H5x1CEcJCs" crossorigin="anonymous">
+  <!-- Link to D3 -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+<!-- Link to Plotly -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<!-- Link to customized stylesheet -->
+  <link rel="stylesheet" href="../static/assets/css/style_chart1.css">
+</head>
+<body>
+
+
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand mt-3" href="../../index.html"><h2 class="text-dark ml-2">OLYMPICS</h2></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto"></ul>
+      <ul class="nav navbar-nav navbar-right-custom">
+      <li class="nav-item">
+        <a class="nav-link" href="data.html">DATA</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Visualizations</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="chart0.html">Medals Timeline</a>
+          <a class="dropdown-item" href="chart1.html">Gender & Body Composition</a>
+          <a class="dropdown-item" href="chart2.html">Medals VS GDP</a>
+          <a class="dropdown-item" href="chart3.html">Medals World View - Seasons</a>
+          <!-- <a class="dropdown-item" href="chart4.html">Medals World View - Sport</a> -->
+        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="analysis.html">Analysis</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="olympic_facts.html">Olympic Facts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="machine_learning.html">Olympic Medal Predictions</a>
+      </li>
+      </ul>
+  </div>
+</nav>
+
+
+ <!-- Image header -->
+    <div class= "container">
+      <div class="row">
+          <div class="col-md-12">  
+            <img class="col-md-12" id="photo" src="../static/assets/images/images_home/static_bar_chart.png"/>   
+          </div>
+      </div>
+    </div>  
+
+<hr>
+<!--Insert title and subtitle here --> 
+<!--------------------------><!-------------------------->
+<div class= "container">
+  
+  <section id="header" class="text-center">
+      <h1 class="mb-5 display-3 content">Gender & Body Composition</h1>
+      <h2 class="mb-5 content text-warning">for Gold medallists</h2>
+  </section>
+</div>
+
+
+
+
+<!-- Input code here for visualizations -->
+<!--------------------------><!-------------------------->
+<!--------------------------><!-------------------------->
+      <!-- Filtered Dropdown buttons -->
+  <section >
+    <div class="container mt-5 mb-5">
+      <form class="form-inline form-row justify-content-center">
+            <!-- Gender -->
+            <select class="form-control mx-3 mb-3" id="selDataset" onchange="getData(this.value)">
+            <option selected="true" disabled="disabled">Select Gender</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            </select>
+      </form>
+    </div>
+  </section>
+                        
+<!-- Top 3 sports -->
+<div class="container d-flex justify-content-center">
+  <div class="row">
+    <section class="jumbotron mr-5" style="background: #eeeeee !important">
+      <h3 class="text-center text-danger display-5 justify-content-around mb-5">Event with the <br>Oldest, Tallest, Heaviest </h3>
+      <img class="images mr-5" src="../static/assets/images/images_chart1/cycling.png" alt="cycling" title="cycling">
+      <img class="images mr-5" src="../static/assets/images/images_chart1/basketball.png" alt="basketball" title="basketball">
+      <img class="images" src="../static/assets/images/images_chart1/weightlifting.png" alt="weightlifting" title="weightlifting">
+    </section>
+    <section class="jumbotron" style="background: #eee !important">
+      <h3 class="text-center text-danger display-5 justify-content-around mb-5">Event with the <br>Youngest, Shortest, Lightest</h3>
+      <img class="images mr-5" src="../static/assets/images/images_chart1/swimming.png" alt="swimming" title="swimming">
+      <img class="images mr-5" src="../static/assets/images/images_chart1/weightlifting.png" alt="weightlifting" title="weightlifting">
+      <img class="images" id="imageChange" src="../static/assets/images/images_chart1/gymnastics.png">
+    </section>
+  </div>
+</div>
+<!-- Start of bar Charts -->
+
+<!-- Horizontal line -->
+<div class="container">
+  <hr>
+</div>
+<div class="container d-flex justify-content-center mb-5">
+      <div class="row">
+        <div class="col-md-12"> 
+        <!-- First sport bar chart -->
+          <div class="" id="plot1"></div>
+        </div>
+      </div>
+</div>
+<!-- Horizontal line -->
+<div class="container">
+  <hr>
+</div>
+<div class="container d-flex justify-content-center">
+      <div class="row">
+        <div class="col-md-12 mb-5"> 
+        <!-- Second sport bar chart -->
+          <div class="" id="plot2"></div>
+        </div>
+      </div>
+</div>
+<!-- Horizontal line -->
+<div class="container">
+  <hr>
+</div>
+<div class="container d-flex justify-content-center">
+      <div class="row">
+        <div class="col-md-12 mb-5"> 
+        <!-- Third sport bar chart -->
+          <div class="" id="plot3"></div>
+        </div>
+      </div>
+</div>
+
+
+
+
+
+
+
+<!-- Footer -->
+
+<div class="container-fluid ml-5">
+  <footer>
+    <p class="text-muted">Olympics Visualization and Prediction 2020.
+      Images: <a href="https://unsplash.com/">Unsplash &</a>  <a href="https://www.fool.com/amp/features/specials/2014/01/15/does-it-pay-to-host-the-olympics.aspx">Motley Fool, </a>
+     Avatars: <a href="https://getavataaars.com/">GetAvataaars</a></p>
+  </footer>
+  
+</div>
+
+
+
+
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<script>
+  // Changing sport images between female and male options
+  function changeImages() {
+
+    // Set variables for image id and dropdown values
+    let imageChange = document.getElementById("imageChange");
+    let dataset = d3.select("#selDataset").property("value");
+
+    // if the dropdown menu option is female, use this image
+    if (dataset == 'female') {
+      imageChange.setAttribute('src', "../static/assets/images/images_chart1/gymnastics.png");
+    }
+    // if the dropdown menu option is male, use this image
+    if (dataset == 'male') {
+      imageChange.setAttribute('src',"../static/assets/images/images_chart1/wrestling.png");
+    }
+  }
+  selDataset.addEventListener("change", changeImages);
+</script>
+
+<script type="text/javascript" src="../static/js/app_chart_1.js"> </script>
+
+</body>
+</html>
