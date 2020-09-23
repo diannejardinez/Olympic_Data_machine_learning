@@ -21,6 +21,6 @@
 
 ## GitHub Page for static information
 
-[Olympics Project Website](https://diannejardinez.github.io/Olympic_Data_machine_learning/Flask%20API/templates/index.html)
+[Olympics Project Website](https://diannejardinez.github.io/Olympic_Data_machine_learning/)
 
 **To Run through Flask**: Go to `readme_database_connection.md` in Flask API directory inside database directory
