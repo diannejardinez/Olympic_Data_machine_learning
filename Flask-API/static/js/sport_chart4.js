@@ -51,7 +51,11 @@ function updateMap() {
 
         var selected_sport = d3.select("#sport").property("value");
         
-        d3.json(`/api/sport/${selected_sport}`).then(function(top_countries){
+        d3.json("../static/assets/data/sport_medals.json").then(function(data){
+            // console.log(data)
+            var top_countries = data.filter(d => d.sport === selected_sport)
+                                .slice(0, 10)
+            // console.log(one_sport)
 
             var country_list = [];
             var total_medal_list = [];
@@ -135,18 +139,27 @@ function updateBarChart() {
 
     var selected_country = d3.select("#country_name").property("value");
         
-    d3.json(`/api/sport/country/${selected_country}`).then(function(top_sports){
+    d3.json("../static/assets/data/sport_medals.json").then(function(data){
 
-        console.log(top_sports);
+        // console.log(data);
+
+        var top_sports = data.filter(d => d.country === selected_country)
+                            .sort((a,b) => b.medals - a.medals)
+                            .slice(0, 10)
+
+        // console.log(top_sports);
 
         myLabels = top_sports.map(function(country_obj) {
             return country_obj.sport
         });
 
         myData = top_sports.map(function(country_obj) {
-            return country_obj.medals_won
+            return country_obj.medals
         });
 
+        console.log(myLabels)
+        console.log("ME")
+        console.log(myData)
         renderBarChart(myLabels, myData)
 
     })
